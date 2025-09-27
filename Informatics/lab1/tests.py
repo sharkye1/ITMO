@@ -1,5 +1,5 @@
 import unittest
-from Informatics.lab1.calculate import to_symmetric_base
+from calculate import to_symmetric_base
 
 class TestSymmetricBase(unittest.TestCase):
     def test_positive_9(self):
