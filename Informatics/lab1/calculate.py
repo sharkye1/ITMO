@@ -1,39 +1,47 @@
 # script.py
 def to_symmetric_base(num, base):
-    # Функция для конвертации числа num в симметричную систему с основанием base.
-    if base < 3:  # Минимальное основание для симметричной - 3.
+    # Проверка, что входные данные - целые числа
+    if not isinstance(num, int):
+        raise ValueError("Число должно быть целым.")
+    if not isinstance(base, int):
+        raise ValueError("Основание должно быть целым.")
+    
+    # Проверка основания: должно быть >= 3 и нечётным
+    if base < 3:
         raise ValueError("Основание должно быть не меньше 3.")
+    if base % 2 == 0:
+        raise ValueError("Основание должно быть нечётным для симметричной системы.")
     
+    # Если число 0, возвращаем "0"
     if num == 0:
-        return "0"  # Если число 0, то и в любой системе 0.
+        return "0"
     
-    digits = []  # Список для хранения цифр.
+    digits = []  # Список для хранения цифр
     while num != 0:
-        remainder = num % base  # Остаток от деления.
-        num = num // base  # Целочисленное деление.
+        remainder = num % base  # Остаток от деления
+        num = num // base  # Целочисленное деление
         
-        # В симметричной, если остаток больше floor(base/2), корректируем.
+        # В симметричной системе корректируем остаток, если он больше floor(base/2)
         half_base = base // 2
         if remainder > half_base:
             remainder -= base
             num += 1
         
-        digits.append(remainder)  # Добавляем цифру в список.
+        digits.append(remainder)  # Добавляем цифру
     
-    # Переворачиваем список, потому что собирали с конца.
+    # Переворачиваем цифры
     digits.reverse()
     
-    # Преобразуем в строку с обозначениями.
+    # Формируем строку результата
     result = ""
     for d in digits:
         if d < 0:
-            result += "{^" + str(-d) + "}"  # Для отрицательных: {^k}
+            result += "{^" + str(-d) + "}"  # Отрицательные цифры как {^k}
         else:
             result += str(d)
     
     return result
 
-# Интерактивная часть только для запуска напрямую
 if __name__ == "__main__":
     try:
         input_num = input("Введите число в десятичной системе: ")
