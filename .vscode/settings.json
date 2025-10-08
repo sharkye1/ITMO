@@ -9,6 +9,6 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
     "java.project.referencedLibraries": [
-        "Programming/lab2/lib/**/*.jar"
+        "Programming/lab2/lib/**/*.jar",
     ]
 }
