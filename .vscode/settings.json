@@ -10,5 +10,6 @@
     "python.testing.unittestEnabled": true,
     "java.project.referencedLibraries": [
         "Programming/lab2/lib/**/*.jar",
-    ]
+    ],
+    "python.analysis.autoImportCompletions": true
 }
