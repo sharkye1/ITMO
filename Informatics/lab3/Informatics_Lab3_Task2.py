@@ -13,13 +13,24 @@
 import re
 
 def solve(text):
+    # Приводим текст к нижнему регистру
     text = text.lower()
-    pattern = r'\b(?=\w*[еаоэяию])\w*([еаоэяию])(?:\w*\1\w*)*\b'
-    words = re.findall(pattern, text)  
-    matches = re.finditer(r'\b(?=\w*[еаоэяию])\w*([еаоэяию])(?:\w*\1\w*)*\b', text)
-    words = [m.group(0) for m in matches]
-    unique_words = sorted(set(words), key=lambda x: (len(x), x))
-    return unique_words
+    # Набор русских гласных (включая ё)
+    vowels = set('аеёиоуыэюя')
+    # Находим слова, состоящие только из русских букв
+    found_words = re.findall(r"\b[а-яё]+\b", text)
+
+    selected = []
+    for w in found_words:
+        # множество разных гласных, которые встречаются в слове
+        vowel_set = {ch for ch in w if ch in vowels}
+        # если ровно одна буква-гласная (она может повторяться) — принимаем слово
+        if len(vowel_set) == 1 and vowel_set:
+            selected.append(w)
+
+    # убираем дубли и сортируем: сначала по длине, потом лексикографически
+    unique = sorted(set(selected), key=lambda x: (len(x), x))
+    return unique
 
 if __name__ == "__main__":
     text = input("Введите текст: ")
