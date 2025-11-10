@@ -1,6 +1,12 @@
-tree.java
-tree_ITMO.txt
+tree*.*
+tree*.*
 Informatics\lab1\__pycache__
 Programming\lab2\out
 *\.idea
+*\.vscode
+*.iml
 Programming\lab2\lab2.iml
+Informatics\lab1\__pycache__
+Informatics\lab3\__pycache__
+Informatics\lab4\__pycache__
+Informatics/lab3/__pycache__/Informatics_Lab3_Task3.cpython-313.pyc
