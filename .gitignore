@@ -1,12 +1,33 @@
+# --- Паттерны для macOS / Linux / Unix ---
+# Системные файлы macOS
+.DS_Store
+
+# Просто мои скрипты
 tree*.*
-tree*.*
-Informatics\lab1\__pycache__
-Programming\lab2\out
-*\.idea
-*\.vscode
+
+# Проектные кеши питона
+Informatics/*/__pycache__/*
+
+# Папки сборки / вывода
+Programming/lab*/out/
+
+# Конфигурации IDE/редакторов (игнорировать папки целиком)
+.idea/
+.vscode/
+
+# Файлы модулей IntelliJ/IDEA
 *.iml
+Programming/*/*.iml
+
+
+# --- Паттерны для Windows ---
+tree*.*
+Informatics\lab1\__pycache__\
+Informatics\lab3\__pycache__\
+Informatics\lab4\__pycache__\
+Informatics\lab3\__pycache__\Informatics_Lab3_Task3.cpython-313.pyc
+Programming\lab2\out\
 Programming\lab2\lab2.iml
-Informatics\lab1\__pycache__
-Informatics\lab3\__pycache__
-Informatics\lab4\__pycache__
-Informatics/lab3/__pycache__/Informatics_Lab3_Task3.cpython-313.pyc
+*.iml
+\.idea\
+\.vscode\
