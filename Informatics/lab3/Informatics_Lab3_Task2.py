@@ -1,6 +1,6 @@
 # Author = Gevorkyan Aleksey Stanislavovich
 # Group = P3118
-# Date = 26.10.2025
+# Date =10.11.2025
 
 
 # С помощью регулярного выражения найти в тексте слова, в которых встречается
@@ -13,22 +13,20 @@
 import re
 
 def solve(text):
-    # Приводим текст к нижнему регистру
     text = text.lower()
-    # Набор русских гласных (включая ё)
-    vowels = set('аеёиоуыэюя')
-    # Находим слова, состоящие только из русских букв
-    found_words = re.findall(r"\b[а-яё]+\b", text)
+    vowels = set('аеёиоуыэюяaeiouy')
+    words = re.findall(r"[a-zа-яё]+", text)
 
     selected = []
-    for w in found_words:
-        # множество разных гласных, которые встречаются в слове
-        vowel_set = {ch for ch in w if ch in vowels}
-        # если ровно одна буква-гласная (она может повторяться) — принимаем слово
-        if len(vowel_set) == 1 and vowel_set:
+    for w in words:
+        vowel_set = set()
+        for ch in w:
+            if ch in vowels:
+                vowel_set.add(ch)
+
+        if len(vowel_set) == 1:
             selected.append(w)
 
-    # убираем дубли и сортируем: сначала по длине, потом лексикографически
     unique = sorted(set(selected), key=lambda x: (len(x), x))
     return unique
 
