@@ -2,6 +2,10 @@ package src;
 
 import MyPokemons.*;
 import ru.ifmo.se.pokemon.*;
+import MyMoves.Physical.*;
+import MyMoves.Special.*;
+import MyMoves.Status.*;
+
 
 public class TestBattle {
     public static void main(String[] args) {
@@ -21,7 +25,8 @@ public class TestBattle {
         b.addFoe(p4);
         b.addFoe(p5);
         b.addFoe(p6);
-
+        // когда водяная атака попадет на травяного покемона, у него хп вырастает в два раза
+        
         b.go();
     }
 }

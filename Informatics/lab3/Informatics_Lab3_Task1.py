@@ -13,7 +13,7 @@ def find_VT_ITMO(text):
     # (?:\W+\w+){0,4}? - не более 4 слов между "ВТ" и "ИТМО"
     # \w+ - одно или более словесных символов (буквы, цифры и тд)
     # \b ИТМО \b - обозначает слово "ИТМО" (границы слова)
-    return re.findall(pattern, text)
+    return re.findall(pattern, text)  
 
 if __name__ == "__main__":
     text = input()
