@@ -1,7 +1,7 @@
 package src;
 
 import MyPokemons.*;
-import ru.ifmo.se.pokemon.*;
+import lib.ru.ifmo.se.pokemon.*;
 import MyMoves.Physical.*;
 import MyMoves.Special.*;
 import MyMoves.Status.*;
@@ -10,6 +10,7 @@ import MyMoves.Status.*;
 public class TestBattle {
     public static void main(String[] args) {
         Battle b = new Battle();
+        
 
         Zygarde p1 = new Zygarde("зигард", 1);
         Omanyte p2 = new Omanyte("оманайт", 1);
