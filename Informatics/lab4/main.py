@@ -3,9 +3,8 @@
 
 # функция для парсинга TOML
 def parse_toml(filename):
-    f = open(filename, "r", encoding="utf-8")
-    lines = f.readlines()
-    f.close()
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()
     
     data = {}
     current_table = []
@@ -125,14 +124,12 @@ if __name__ == "__main__":
     
     # сохраняем JSON
     json_content = to_json(data)
-    f = open("schedule.json", "w", encoding="utf-8")
-    f.write(json_content)
-    f.close()
+    with open("schedule.json", "w", encoding="utf-8") as f:
+        f.write(json_content)
     print("Файл schedule.json создан")
     
     # сохраняем бинарный файл
     bin_content = bytes(str(data), "utf-8")
-    f = open("schedule.bin", "wb")
-    f.write(bin_content)
-    f.close()
+    with open("schedule.bin", "wb") as f:
+        f.write(bin_content)
     print("Файл schedule.bin создан")
