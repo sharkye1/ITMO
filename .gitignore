@@ -11,6 +11,10 @@ Informatics/*/__pycache__/*
 # Папки сборки / вывода
 Programming/lab*/out/
 
+# Сгенерированные файлы lab4
+Informatics/lab4/schedule.json
+Informatics/lab4/schedule.bin
+
 # Конфигурации IDE/редакторов (игнорировать папки целиком)
 .idea/
 .vscode/
