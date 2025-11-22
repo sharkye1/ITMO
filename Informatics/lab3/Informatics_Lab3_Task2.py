@@ -20,12 +20,15 @@ def solve(text):
     selected = []
     for w in words:
         vowel_set = set()
+        
         for ch in w:
             if ch in vowels:
                 vowel_set.add(ch)
 
         if len(vowel_set) == 1:
             selected.append(w)
+
+        print(vowel_set)
 
     unique = sorted(set(selected), key=lambda x: (len(x), x))
     return unique

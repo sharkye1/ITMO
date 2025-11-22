@@ -53,5 +53,7 @@ def solve(text):
 
 
 if __name__ == "__main__":
-    text = input("Введите пароль: ")
-    solve(text)
+    ans = "start"
+    while ans != "":
+        text = input("Введите пароль: ")
+        ans = solve(text)
