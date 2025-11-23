@@ -34,6 +34,7 @@ Programming\lab2\lab2.iml
 OPD(FoPA)/lab2/bcomp-ng.jar
 Programming/lab3/src/*.class
 Informatics/lab3/for_test.py
+Informatics/lab3/test_tasks.py
 Informatics/lab4/*.bin
 Informatics/lab4/*.json
 Informatics/lab4/*.*p*g
