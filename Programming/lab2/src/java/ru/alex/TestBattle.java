@@ -1,11 +1,7 @@
-package src;
+package java.ru.alex;
 
-import MyPokemons.*;
-import lib.ru.ifmo.se.pokemon.*;
-import MyMoves.Physical.*;
-import MyMoves.Special.*;
-import MyMoves.Status.*;
-
+import java.ru.alex.mypokemons.*;
+import ru.ifmo.se.pokemon.*;
 
 public class TestBattle {
     public static void main(String[] args) {

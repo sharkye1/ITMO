@@ -1,7 +1,6 @@
-package MyMoves.Special;
+package java.ru.alex.mymoves.Special;
 
 import ru.ifmo.se.pokemon.*;
-
 public class Hydro_Pump extends SpecialMove {
     public Hydro_Pump() {
         super(Type.WATER, 110, 80); // сила: 110, точность: 80
@@ -18,15 +17,13 @@ public class Hydro_Pump extends SpecialMove {
             if (healAmount > 0) {
                 // applyOppDamage принимает положительное число урона, поэтому передаём отрицательное
                 applyOppDamage(p, -healAmount);
-                // добавляем к строке вывода сообщение о восстановлении хп
-                out = "использует Hydro Pump и восстанавливает " + (int)healAmount + " HP у " + p.getName();
             }
         }
     }
 
     @Override
     protected String describe() {
-        return out;
+        return "использует Hydro Pump";
     }
 
 }

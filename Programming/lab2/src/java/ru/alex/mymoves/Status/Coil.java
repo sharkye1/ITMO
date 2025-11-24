@@ -1,4 +1,4 @@
-package MyMoves.Status;
+package java.ru.alex.mymoves.Status;
 
 import ru.ifmo.se.pokemon.*;
 

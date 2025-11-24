@@ -1,4 +1,4 @@
-package MyMoves.Special;
+package java.ru.alex.mymoves.Special;
 
 import ru.ifmo.se.pokemon.*;
 

@@ -1,4 +1,4 @@
-package MyPokemons;
+package java.ru.alex.mypokemons;
 
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;

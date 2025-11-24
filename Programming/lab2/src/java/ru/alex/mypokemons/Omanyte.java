@@ -1,4 +1,4 @@
-package MyPokemons;
+package java.ru.alex.mypokemons;
 
 import MyMoves.Physical.Rock_Slide;
 import MyMoves.Special.Hydro_Pump;
