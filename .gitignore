@@ -1,42 +1,56 @@
-# --- Паттерны для macOS / Linux / Unix ---
-# Системные файлы macOS
+# macOS
 .DS_Store
 
-# Просто мои скрипты
-tree*.*
-
-# Проектные кеши питона
-Informatics/*/__pycache__/*
-
-# Папки сборки / вывода
-Programming/lab*/out/
-
-# Конфигурации IDE/редакторов (игнорировать папки целиком)
+# JetBrains 
 .idea/
+*.iml
+
+# VS Code
 .vscode/
+
+# Кэш Python
+/__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+
+**/*.py[cod]
+
+# Виртуалки
 .venv/
-# Файлы модулей IntelliJ/IDEA
-*.iml
-Programming/*/*.iml
+*/.venv/
+*/*/.venv/
+
+# Упакованные дистрибутивы
+*.egg-info/
+
+# --- Java / JVM / Build outputs ---
+# Кэш компиляции Java
+*.class
+*/*.class
+*/*/*.class
 
 
-# --- Паттерны для Windows ---
-tree*.*
-Informatics\lab1\__pycache__\
-Informatics\lab3\__pycache__\
-Informatics\lab4\__pycache__\
-Informatics\lab3\__pycache__\Informatics_Lab3_Task3.cpython-313.pyc
-Programming\lab2\out\
-Programming\lab2\lab2.iml
-*.iml
-\.idea\
-\.vscode\
-OPD(FoPA)/lab2/bcomp-ng.jar
-Programming/lab3/src/*.class
+Informatics/The Cistercian/test*
+Informatics/The Cistercian/dump*
+
+# --- Файлы отдельных проектов ---
+# Лабы по информатике
 Informatics/lab3/for_test.py
 Informatics/lab3/test_tasks.py
+Informatics/lab4/*.{bin,json,txt}
+# Ignore common image outputs from lab4
+Informatics/*.{png,jpg,jpeg,gif}
 
-Informatics/lab4/sources/*.json
-Informatics/lab4/sources/*.csv
-Informatics/lab4/sources/*.bin
-Informatics/lab4/sources/*.xml
+# Лабы по программированию
+Programming/lab2/out/
+Programming/lab2/lab2.iml
+Programming/**/*.iml
+Programming/lab3/src/*.class
+
+# ОПД
+OPD(FoPA)/lab2/bcomp-ng.jar
+
+# --- Разное / личные скрипты ---
+tree*.*
+
+Informatics/tester/test1.py
