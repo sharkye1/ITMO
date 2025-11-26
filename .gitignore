@@ -37,7 +37,11 @@ Informatics/The Cistercian/dump*
 # Лабы по информатике
 Informatics/lab3/for_test.py
 Informatics/lab3/test_tasks.py
-Informatics/lab4/*.{bin,json,txt}
+Informatics/lab4/sources/*.json
+Informatics/lab4/sources/*.bin
+Informatics/lab4/sources/*.txt
+Informatics/lab4/sources/*.xml
+
 # Ignore common image outputs from lab4
 Informatics/*.{png,jpg,jpeg,gif}
 
@@ -54,3 +58,7 @@ OPD(FoPA)/lab2/bcomp-ng.jar
 tree*.*
 
 Informatics/tester/test1.py
+Informatics/The Cistercian/debug_output/
+Informatics/The Cistercian/templates/
+Informatics/The Cistercian/nums/
+Informatics/The Cistercian/num*.png
