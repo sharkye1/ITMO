@@ -1,4 +1,4 @@
-package java.ru.alex.mymoves.Physical;
+package java.ru.alex.mymoves.physical;
 
 import ru.ifmo.se.pokemon.PhysicalMove;
 
