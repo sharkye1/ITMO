@@ -49,7 +49,7 @@ Informatics/*.{png,jpg,jpeg,gif}
 Programming/lab2/out/
 Programming/lab2/lab2.iml
 Programming/**/*.iml
-Programming/lab3/src/*.class
+Programming/lab3/bin
 
 # ОПД
 OPD(FoPA)/lab2/bcomp-ng.jar

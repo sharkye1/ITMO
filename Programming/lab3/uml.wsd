@@ -1,0 +1,185 @@
+@startuml
+
+' ================================
+'        ТЁМНАЯ ТЕМА
+' ================================
+
+skinparam backgroundColor #1e1e2e
+skinparam shadowing false
+
+' Стили для классов
+skinparam class {
+    BackgroundColor #313244
+    BorderColor #89b4fa
+    BorderThickness 2
+    ArrowColor #cdd6f4
+    FontColor #cdd6f4
+    FontSize 12
+    AttributeFontColor #f5e0dc
+    StereotypeFontColor #f9e2af
+}
+
+' Стили для абстрактных классов
+skinparam class<<abstract>> {
+    BackgroundColor #45475a
+    BorderColor #f38ba8
+}
+
+' Стили для enum
+skinparam class<<enum>> {
+    BackgroundColor #45475a
+    BorderColor #fab387
+}
+
+' Стили для record
+skinparam class<<record>> {
+    BackgroundColor #45475a
+    BorderColor #94e2d5
+}
+
+' Стили для interface
+skinparam interface {
+    BackgroundColor #313244
+    BorderColor #a6e3a1
+    FontColor #cdd6f4
+}
+
+' Стили для exception
+skinparam class<<exception>> {
+    BackgroundColor #45475a
+    BorderColor #f38ba8
+}
+
+' Стили для заметок
+skinparam note {
+    BackgroundColor #585b70
+    BorderColor #89b4fa
+    FontColor #cdd6f4
+}
+
+' ================================
+'        ENUM / RECORD
+' ================================
+
+class Mood <<enum>> {
+    SLEEPY
+    AWAKE
+    CREATIVE
+}
+
+class Position <<record>> {
+    x : int
+    y : int
+}
+
+' ================================
+'        АБСТРАКТНЫЕ КЛАССЫ
+' ================================
+
+abstract class Character {
+    - name : String
+    - mood : Mood
+    - position : Position
+    - location : Cabin
+    --
+    + getName() : String
+    + getMood() : Mood
+    + moveTo(cabin : Cabin)
+    + setMood(m : Mood)
+    + performAction(action : Action)
+    --
+    {abstract} describeState() : String
+}
+
+class Human
+class Shorty
+
+Human --|> Character
+Shorty --|> Character
+
+' ================================
+'            ЛОКАЦИИ
+' ================================
+
+class Cabin {
+    - name : String
+    - occupants : ArrayList<Character>
+    --
+    + addCharacter(c : Character)
+    + removeCharacter(c : Character)
+    + hasCharacter(c : Character) : boolean
+}
+
+Cabin o-- "0..*" Character : occupants
+
+
+' ================================
+'       ПОВЕДЕНИЕ (ACTION)
+' ================================
+
+interface Action {
+    + execute(actor : Character)
+}
+
+class SleepingAction {
+    - durationHours : int
+    --
+    + execute(actor : Character)
+}
+
+class PaintingAction {
+    - theme : String
+    --
+    + execute(actor : Character)
+}
+
+class ExploreAction {
+    - distance : int
+    --
+    + execute(actor : Character)
+}
+
+SleepingAction ..|> Action
+PaintingAction ..|> Action
+ExploreAction ..|> Action
+
+Character --> Action : performs >
+
+' ================================
+'            СЦЕНАРИЙ
+' ================================
+
+class Scenario {
+    - actions : ArrayList<Action>
+    - characters : ArrayList<Character>
+    --
+    + addAction(a : Action)
+    + addCharacter(c : Character)
+    + run()
+}
+
+Scenario --> Character
+Scenario --> Action
+
+
+' ================================
+'          ИСКЛЮЧЕНИЯ
+' ================================
+
+class CharacterNotInCabinException <<exception>> {
+    + getMessage() : String
+}
+
+class WrongActionException <<exception>> {
+    + getMessage() : String
+}
+
+SleepingAction --> CharacterNotInCabinException : throws >
+Action --> WrongActionException : may throw >
+
+note right of SleepingAction
+Персонаж может спать только
+если его location == Cabin
+end note
+
+@enduml
